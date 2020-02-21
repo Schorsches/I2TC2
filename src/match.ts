@@ -1,10 +1,12 @@
 export class Match {
+	private matchId: number;
 	private playerHomeId: number; //keine Anpassung nach Initialisierung
 	private playerAwayId: number;
 	playerHomeScore: number;
 	playerAwayScore: number;
 	
 	constructor(playerHomeId?: number, playerAwayId?: number) {//? = optionaler Parameter, entweder alle oder keine optional
+		this.matchId = 1;
 		this.playerHomeId = playerHomeId;
 		this.playerAwayId = playerAwayId;
 	}
@@ -24,11 +26,11 @@ export class Match {
 	}
 	
 	//Properties:
-	get playerAwayScore() {
+	getPlayerAwayScore() {
 		return this.playerAwayScore;
 	}
 	
-	set playerAwayScore(value) {
+	setPlayerAwayScore(value) {
 		this.playerAwayScore = value;
 	}
 	
