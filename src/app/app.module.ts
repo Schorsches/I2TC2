@@ -1,11 +1,11 @@
-import { MenuSelectionService } from './menu-selection.service';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MenuSelectionService } from './menu-selection/menu-selection.service';
 import { FirebaseService } from './firebase.service';
+import { routes } from './app.routes';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from './../environments/environment.prod';
-import { MatchService } from './match.service';
-import { MatchComponent } from './match.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -24,13 +24,12 @@ import { MenuSelectionComponent } from './menu-selection/menu-selection.componen
 import { ManagePlayerComponent } from './manage-player/manage-player.component';
 import { ManageSettingsComponent } from './manage-settings/manage-settings.component';
 import { RouterModule } from '@angular/router';
-import { routes } from './app.routes';
-import { MenuSelectionResolver } from './menu-selection.resolver';
+import { MenuSelectionResolver } from './menu-selection/menu-selection.resolver';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MatchComponent,
     LeagueComponent,
     NewPlayerComponent,
     EditPlayerComponent,
@@ -41,20 +40,21 @@ import { MenuSelectionResolver } from './menu-selection.resolver';
     SetMatchResultComponent,
     MenuSelectionComponent,
     ManagePlayerComponent,
-    ManageSettingsComponent
+    ManageSettingsComponent,
+    BreadcrumbComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
  	  AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes, //forRoot should only be called once in your app for top level routes
+    HttpClientModule,
+    MatToolbarModule,
+    RouterModule.forRoot(routes,
       { useHash: false }
-    ),
-    HttpClientModule
+    )
   ],
   providers: [
-    MatchService,
     FirebaseService,
     MenuSelectionService,
     MenuSelectionResolver
