@@ -1,6 +1,6 @@
 <h2>Menu</h2>
 <ul>
   <li *ngFor="let selection of menuSelections">
-      <span>{{selection.title}}</span>
+    <a routerLink="/{{selection.slug}}"><span>{{selection.title}}</span></a>
   </li>
 </ul>

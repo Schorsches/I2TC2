@@ -17,7 +17,6 @@ export class MenuSelectionComponent implements OnInit {
   ngOnInit(): void {
     console.log("ngOnInit vor subscribe");
     this.route.data.subscribe(routeData => {
-      console.log("RouteData:", routeData);
       let data = routeData['data'];
       console.log("Data:", data);
       this.menuSelections = data.menuSelection;

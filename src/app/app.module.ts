@@ -1,3 +1,4 @@
+
 //import { FirebaseService } from './firebase.service';
 import { NgModule }       from '@angular/core';
 
@@ -10,11 +11,15 @@ import { NewLeagueComponent } from './new-league/new-league.component';
 import { ManageTournamentComponent } from './manage-tournament/manage-tournament.component';
 import { ViewMatchdayComponent } from './view-matchday/view-matchday.component';
 import { SetMatchResultComponent } from './set-match-result/set-match-result.component';
-import { MenuSelectionComponent } from './menu-selection/menu-selection.component';
-import { ManagePlayerComponent } from './manage-player/manage-player.component';
 import { ManageSettingsComponent } from './manage-settings/manage-settings.component';
+
+import { MenuSelectionComponent } from './menu-selection/menu-selection.component';
 import { MenuSelectionResolver } from './menu-selection/menu-selection.resolver';
 import { MenuSelectionService } from './menu-selection/menu-selection.service';
+
+import { ManagePlayerComponent } from './manage-player/manage-player.component';
+import { ManagePlayerService } from './manage-player/manage-player.service';
+import { ManagePlayerResolver } from './manage-player/manage-player.resolver';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,7 +47,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     MenuSelectionService,
-    MenuSelectionResolver
+    MenuSelectionResolver,
+    ManagePlayerResolver,
+    ManagePlayerService
   ],
   bootstrap: [AppComponent]
 })

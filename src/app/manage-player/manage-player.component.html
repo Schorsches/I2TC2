@@ -1,1 +1,6 @@
-<p>manage-player works!</p>
+<h2>Manage Players</h2>
+<ul>
+  <li *ngFor="let selection of managePlayerSelection">
+    <a routerLink="/{{selection.slug}}"><span>{{selection.title}}</span></a>
+  </li>
+</ul>

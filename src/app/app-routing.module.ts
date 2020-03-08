@@ -6,6 +6,7 @@ import { ManagePlayerComponent } from './manage-player/manage-player.component';
 import { ManageTournamentComponent } from './manage-tournament/manage-tournament.component';
 import { ManageSettingsComponent } from './manage-settings/manage-settings.component';
 import { MenuSelectionResolver } from './menu-selection/menu-selection.resolver';
+import { ManagePlayerResolver } from './manage-player/manage-player.resolver';
 
 
 const routes: Routes = [
@@ -15,7 +16,10 @@ const routes: Routes = [
     resolve: {
       data: MenuSelectionResolver
     }
-  }
+  },
+  { path: 'managePlayers', component: ManagePlayerComponent, resolve: { data: ManagePlayerResolver} },
+  { path: 'manageTournaments', component: ManagePlayerComponent },
+  { path: 'manageSettings', component: ManageSettingsComponent }
 ];
 
 @NgModule({
