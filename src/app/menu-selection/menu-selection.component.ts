@@ -15,12 +15,12 @@ export class MenuSelectionComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log("ngOnInit vor subscribe");
     this.route.data.subscribe(routeData => {
       console.log("RouteData:", routeData);
       let data = routeData['data'];
       console.log("Data:", data);
-      //this.menuSelections = data.
+      this.menuSelections = data.menuSelection;
     });
   }
-
 }

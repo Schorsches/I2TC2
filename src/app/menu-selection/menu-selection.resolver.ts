@@ -10,18 +10,12 @@ export class MenuSelectionResolver implements Resolve<any> {
 
   resolve() {
     return new Promise((resolve, reject) => {
-
-      let breadcrumbs = [
-        { url: '/', label: 'Menu-Selection' }
-      ];
-
       //get menu-selections from local json file
       this.menuSelectionService.getMenuSelections()
       .then(
         menuSelection => {
           return resolve({
-            menuSelection: menuSelection,
-            breadcrumbs: breadcrumbs
+            menuSelection: menuSelection
           });
         },
         err => {

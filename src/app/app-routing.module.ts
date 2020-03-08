@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { MenuSelectionComponent } from './menu-selection/menu-selection.component';
 import { ManagePlayerComponent } from './manage-player/manage-player.component';
@@ -15,32 +15,11 @@ const routes: Routes = [
     resolve: {
       data: MenuSelectionResolver
     }
-  }/*,
-  {
-      path: 'managePlayer/:playerSlug',
-      component: ManagePlayerComponent,
-      resolve: {
-        data: ManagePlayerResolver
-      }
-  },
-  {
-      path: 'manageTournament/:tournamentSlug',
-      component: ManageTournamentComponent,
-      resolve: {
-        data: ManageTournamentResolver
-      }
-  },
-  {
-      path: 'manageSettings/:settingsSlug',
-      component: ManageSettingsComponent,
-      resolve: {
-        data: ManageSettingsResolver
-      }
-  }*/
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
